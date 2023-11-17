@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- <div class="children">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+    </div> -->
+    <div id="nav">
+        <img
+            src="data:image/png;base64,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">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="search">
+            <input type="search" placeholder="Search">
+            <i class="fa fa-search"></i>
+        </div>
+        <div class="magazine">
+            <i class="fa fa-shopping-cart" id="shop"></i>
+            <h4>My Magazine</h4>
+        </div>
+        <div class="register">
+            <i class="fa fa-user"></i>
+            <a href="register.html" target="_blank">
+                <h4>LOGIN</h4>
+            </a>
+        </div>
+        <div class="languages">
+            <select>
+                <option>ENG</option>
+                <option>RU</option>
+                <option>ARM</option>
+            </select>
+            <div class="icon-container">
+                <i class="fa fa-caret-down"></i>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="slider">
+            <div class="item"><img src="img/pic1.jpg"></div>
+            <div class="item"><img src="img/pic2.jpg"></div>
+            <div class="item"><img src="img/pic3.jpg"></div>
+            <div class="item"><img src="img/pic4.jpg"></div>
+        </div>
+        <div class="navigation">
+            <div class="btn"></div>
+            <div class="btn1"></div>
+            <div class="btn2"></div>
+            <div class="btn3"></div>
+        </div>
+    </div>
+    <div id="about-us">
+        <h2>About Us</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br> Deleniti illo enim ratione inventore
+            molestiae, <br> porro quidem, nemo asperiores suscipit expedita possimus libero qui <br> sapiente placeat,
+            nostrum voluptatem veniam. Expedita, itaque?</p>
+    </div>
+    <div id="card-container">
+        <div class="card" id="card1">
+            <div class="overlay">
+                <h4>Lorem</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui doloremque incidunt voluptates quis
+                    perspiciatis molestias esse obcaecati, quod natus enim.</p>
+            </div>
+        </div>
+        <div class="card" id="card2">
+            <div class="overlay">
+                <h4>Lorem</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui doloremque incidunt voluptates quis
+                    perspiciatis molestias esse obcaecati, quod natus enim.</p>
+            </div>
+        </div>
+        <div class="card" id="card3">
+            <div class="overlay">
+                <h4>Lorem</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui doloremque incidunt voluptates quis
+                    perspiciatis molestias esse obcaecati, quod natus enim.</p>
+            </div>
+        </div>
+        <div class="card" id="card4">
+            <div class="overlay">
+                <h4>Lorem</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui doloremque incidunt voluptates quis
+                    perspiciatis molestias esse obcaecati, quod natus enim.</p>
+            </div>
+        </div>
+    </div>
+    <div class="norutyun">
+        <h1>Ապրանքներ</h1>
+        <div class="texekutyun">
+            <div class="div">
+                <img src="	https://www.onlineshinanyut.am/images/uploads/banners/VdZRLD6nckURFH.webp">
+                <div class="info" id="children">
+                    <h1>ԷԼԵԿՏՐԱԿԱՆ ՏԵԽՆԻԿԱ</h1>
+                    <p>Ավելի քան 500 տեսականի</p>
+                </div>
+            </div>
+            <div class="div">
+                <img src="	https://www.onlineshinanyut.am/images/uploads/banners/cfnyNEYlBiQG7e.webp">
+                <div class="info">
+                    <h1>ՁԵՌՔԻ ԳՈՐԾԻՔՆԵՐ</h1>
+                    <p class="text">Ավելի քան 500 տեսականի</p>
+                </div>
+            </div>
+            <div class="div">
+                <img src="https://www.onlineshinanyut.am/images/uploads/banners/5hX2WnWnu0CPCJ.webp">
+                <div class="info">
+                    <h1>ՇԻՆԱՆՅՈՒԹ</h1>
+                    <p class="text1">Ավելի քան 500 տեսականի</p>
+                </div>
+            </div>
+            <div class="div">
+                <img src="https://www.onlineshinanyut.am/images/uploads/banners/WkLD33Oeaawhto.webp">
+                <div class="info">
+                    <h1>ԱՅԳԵԳՈՐԾԱԿԱՆ</h1>
+                    <p>Ավելի քան 500 տեսականի</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="magazine-left">
+        <button class="category-btn">
+            <img
+                src="https://icon-library.com/images/hamburger-menu-icon-png-white/hamburger-menu-icon-png-white-14.jpg">
+            <h1>Կատեգորիա</h1>
+        </button>
+        <div class="magazine-main">
+            <div class="category-menu">
+                <p>Էլեկտրական գործիքներ</p>
+            </div>
+            <div class="category-menu">
+                <p>Ձեռքի գործիքներ</p>
+            </div>
+            <div class="category-menu">
+                <p>Սարքավորումներ</p>
+            </div>
+            <div class="category-menu">
+                <p>Վերանորոգում</p>
+            </div>
+            <div class="category-menu">
+                <p>Աստիճան</p>
+            </div>
+            <div class="category-menu">
+                <p>Ավտոմոբիլային գործիքներ</p>
+            </div>
+            <div class="category-menu">
+                <p>Այգեգործական</p>
+            </div>
+            <div class="category-menu">
+                <p>Սանտեխնիկակա</p>
+            </div>
+            <div class="category-menu">
+                <p>Անվտանգություն</p>
+            </div>
+            <div class="category-menu">
+                <p>Ամեն ինչ տան համար</p>
+            </div>
+            <div class="category-menu">
+                <p>Շինանյութ</p>
+            </div>
+            <div class="category-menu">
+                <p>Կրակմարիչներ</p>
+            </div>
+        </div>
+        <div class="sale">
+            <div class="item2">
+                <div class="item_cover">
+                    <img src="img/pic5.jpg">
+                </div>
+                <p>Valtemo ցնցուղ</p>
+                <h5>32000 դրամ</h5>
+                <button>Add</button>
+            </div>
+            <div class="item2">
+                <div class="item_cover">
+                    <img src="img/pic6.jpg">
+                </div>
+                <p>Colorex Vagans 25 ներկ</p>
+                <h5>9լ 39.700 դրամ</h5>
+                <button>Add</button>
+            </div>
+            <div class="item2">
+                <div class="item_cover">
+                    <img src="img/pic7.jpg">
+                </div>
+                <p>Beorol Վրձինն</p>
+                <h5>1700 դրամ</h5>
+                <button>Add</button>
+            </div>
+            <div class="item2">
+                <div class="item_cover">
+                    <img src="img/pic8.jpg">
+                </div>
+                <p>BETOSIL ներկ</p>
+                <h5>9կգ 44.200 դրամ</h5>
+                <button>Add</button>
+            </div>
+            <div class="item2">
+                <div class="item_cover">
+                    <img src="img/pic9.jpg">
+                </div>
+                <p>նավի լաք GOL Wood</p>
+                <h5>2.4կգ 7.800 դրամ</h5>
+                <button>Add</button>
+            </div>
+            <div class="item2">
+                <div class="item_cover">
+                    <img src="img/pic10.jpg">
+                </div>
+                <p>𝐌𝐚𝐫𝐣𝐚𝐧 𝐅𝐥𝐚𝐯𝐢𝐚 սալիկը</p>
+                <h5>𝟗𝟗𝟎𝟎 դրամ</h5>
+                <button>Add</button>
+            </div>
+            <div class="item2">
+                <div class="item_cover">
+                    <img src="img/pic11.jpg">
+                </div>
+                <p>Permolit ներկ</p>
+                <h5>20կգ֊28.000 դրամ </h5>
+                <button>Add</button>
+            </div>
+            <div class="item2">
+                <div class="item_cover">
+                    <img src="img/pic12.jpg">
+                </div>
+                <p>Farbitex մաստիկա</p>
+                <h5>17կգ - 19200 դրամ</h5>
+                <button>Add</button>
+            </div>
+            <div class="item2">
+                <div class="item_cover">
+                    <img src="img/pic13.jpg">
+                </div>
+                <p>KAS ծորակ</p>
+                <h5>14.200 դրամ</h5>
+                <button>Add</button>
+            </div>
+            <div class="item2">
+                <div class="item_cover">
+                    <img src="img/pic14.png">
+                </div>
+                <p>Eskaro Akrit 7 ներկ</p>
+                <h5>9.5լ - 54.600 դրամ</h5>
+                <button>Add</button>
+            </div>
+            <div class="item2">
+                <div class="item_cover">
+                    <img src="img/pic15.png">
+                </div>
+                <p>Luxell գազօջախ</p>
+                <h5>232.000 դրամ</h5>
+                <button>Add</button>
+            </div>
+            <div class="item2">
+                <div class="item_cover">
+                    <img src="img/pic16.png">
+                </div>
+                <p>Bershiano Կաթսա</p>
+                <h5>275.000 դրամ</h5>
+                <button>Add</button>
+            </div>
+            <div class="item2">
+                <div class="item_cover">
+                    <img src="img/pic16.png">
+                </div>
+                <p>Bershiano Կաթսա</p>
+                <h5>275.000 դրամ</h5>
+                <button>Add</button>
+            </div>
+            <div class="item2">
+                <div class="item_cover">
+                    <img src="img/pic16.png">
+                </div>
+                <p>Bershiano Կաթսա</p>
+                <h5>275.000 դրամ</h5>
+                <button>Add</button>
+            </div>
+            <div class="item2">
+                <div class="item_cover">
+                    <img src="img/pic16.png">
+                </div>
+                <p>Bershiano Կաթսա</p>
+                <h5>275.000 դրամ</h5>
+                <button>Add</button>
+            </div>
+            <div class="item2">
+                <div class="item_cover">
+                    <img src="img/pic16.png">
+                </div>
+                <p>Bershiano Կաթսա</p>
+                <h5>275.000 դրամ</h5>
+                <button>Add</button>
+            </div>
+            <div class="item2">
+                <div class="item_cover">
+                    <img src="img/pic16.png">
+                </div>
+                <p>Bershiano Կաթսա</p>
+                <h5>275.000 դրամ</h5>
+                <button>Add</button>
+            </div>
+            <div class="item2">
+                <div class="item_cover">
+                    <img src="img/pic16.png">
+                </div>
+                <p>Bershiano Կաթսա</p>
+                <h5>275.000 դրամ</h5>
+                <button>Add</button>
+            </div>
+            <div class="item2">
+                <div class="item_cover">
+                    <img src="img/pic16.png">
+                </div>
+                <p>Bershiano Կաթսա</p>
+                <h5>275.000 դրամ</h5>
+                <button>Add</button>
+            </div>
+            <div class="item2">
+                <div class="item_cover">
+                    <img src="img/pic16.png">
+                </div>
+                <p>Bershiano Կաթսա</p>
+                <h5>275.000 դրամ</h5>
+                <button>Add</button>
+            </div>
+        </div>
+    </div>
+    <div class="question">
+        <h3>Մեր Առավելությունը</h3>
+        <div class="harcer">
+            <div class="question-div">
+                <h1>Հաճախ տրվող հարցեր</h1>
+                <p>- Ինչպե՞ս պատվիրել:
+                    Պատվեր կատարելու համար հարկավոր է սեղմել ապրանքատեսակին, այնուհետև-Ավելացնել զամբյուղ ->Զամբյուղ
+                    ->Պատվիրել: Լրացրեք Ձեր տվյալներ և սեղմեք Պատվիրել: Ամեն անգամ հասցեն չլրացնելու համար գրանցվեք մեր
+                    կայքում և օգտվեք մի շարք առավելություններից:
+                    - Ուրիշ ինչպե՞ս կարող եմ պատվիրել:Ա՞յլ տարբերակներ կան պատվեր կատարելու համար:
+                </p>
+            </div>
+            <div class="question-div">
+                <h1>Առաքում</h1>
+                <p>• Առաքում Երևանում ԱՆՎՃԱՐ 25000դրամ և ավել գնումների դեպքում,
+                    • Եթե զանգահարել եք մինչև 17:00, ապա պատվերը կլինի նույն օրը ժամերի ընթացքոմ, իսկ եթե 17:00 – ից
+                    հետո, ապա հնարավոր է լինեն ապրանքներ, որոնք առաքվեն հաջորդ օրվա առաջին կեսին:</p>
+            </div>
+            <div class="question-div">
+                <h1>Բոնուս քարտ</h1>
+                <p>Կատարել շահավետ գնումներ, արդեն իսկ հնարավոր է։ Այցելեք մեր խանութսրահ, ձեռք բերեք կուտակային բոնուս
+                    քարտ։ Կուտակեք միավորներ, խնայեք մեզ հետ ձեռք՝ բերելով միմիայն մատչելի և բարձրորակ գործիքներ և
+                    շինարարական պարագաներ։ </p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="info2">
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUXXoN1wg4f2pdJOAgQIY_KI285gm3hk8BlaTbUAYpR-sJQH7eHuHFm0mul7NWAHmxRyU&usqp=CAU">
+            <div class="icons3">
+                <span><a href="https://www.facebook.com/rubenshinmarket/" target="_blank"><i
+                            class="fa fa-facebook"></i></a></span>
+                <span><a href="https://www.instagram.com/rubenshinmarket/" target="_blank"><i
+                            class="fa fa-instagram"></i></a></span>
+            </div>
+            <p>© 2023 Բոլոր իրավունքները պաշտպանված են:Կայքերի <br> պատրաստող- Մայիս Հայրապետյան</p>
+        </div>
+        <div class="tesakani">
+            <h2>Տեսականի</h2>
+            <a href="#">
+                <p>Էլեկտրական գործիքներ</p>
+            </a>
+            <a href="#">
+                <p>Ձեռքի գործիքներ</p>
+            </a>
+            <a href="#">
+                <p>Սարքավորումներ</p>
+            </a>
+            <a href="#">
+                <p>Վերանորոգում</p>
+            </a>
+            <a href="#">
+                <p>Աստիճան</p>
+            </a>
+            <a href="#">
+                <p>Ավտոմոբիլային գործիքներ</p>
+            </a>
+            <a href="#">
+                <p>Այգեգործական</p>
+            </a>
+            <a href="#">
+                <p>Սանտեխնիկակա</p>
+            </a>
+        </div>
+        <div class="kap">
+            <h1>Կապ</h1>
+            <div class="icons4">
+                <a href="#"><i class="fa fa-map-marker"></i></a>
+                <a href="#"><i class="fa fa-envelope"></i></a>
+                <a href="#"><i class="fa fa-phone"></i></a>
+            </div>
+            <p>Գուսան Շերամի 100</p>
+            <p>rubenshinmarket@mail.ru</p>
+            <h5>033 100435</h5>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"
+        integrity="sha512-v/m68W+vaGN/6igoyFpd4GlQzu0jx9/n5gr2PKq5vif+RObyGKHse384YHrOULaxZ810XhlHUrmB3U8UnPB19Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+        integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
